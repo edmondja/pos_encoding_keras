@@ -4,7 +4,7 @@ import keras.backend as K
 def pos_embedding(x):
     ''' Embedding layer as in Attention Is All You Need.
         Can be used this way :
-        Lambda(lambda x: pos_embedding(x) + x)(embedding_layer) '''
+        pos_embedding_layer = Lambda(lambda x: pos_embedding(x))(embedding_layer) '''
     
     dmodel = K.cast(K.shape(x)[-1], K.dtype(x))
     pos = K.cumsum(x * 0 + 1, axis=-2)

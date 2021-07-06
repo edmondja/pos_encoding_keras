@@ -16,6 +16,7 @@ def pos_embedding(x):
     
     return pos_emb
 
+# Example on how to use it
 tensor = np.random.uniform(size=40).reshape((10, 4))
 tensor = K.variable(value=tensor, dtype='float32', name='example')
 embeddings = pos_embedding(tensor)
